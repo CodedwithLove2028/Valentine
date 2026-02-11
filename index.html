@@ -62,22 +62,44 @@
         <p style="margin-top:10px; font-weight:500; color:#ff4d88;">
             I made something special for you 💖
         </p>
+        <br>
+        <button onclick="startLove()">Press Start 💖</button>
+
 
     </div>
 
     <script>
-        function createHeart() {
-            const heart = document.createElement("div");
-            heart.classList.add("heart");
-            heart.innerHTML = "💗";
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.animationDuration = (3 + Math.random() * 3) + "s";
-            document.body.appendChild(heart);
+function startLove() {
+    document.body.innerHTML = `
+        <div style="
+            background:black;
+            color:white;
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column;
+            text-align:center;
+            font-family:'Segoe UI', sans-serif;
+        ">
+            <h1>Hi Love ❤️</h1>
+            <p>I made something for you…</p>
+        </div>
+    `;
+}
 
-            setTimeout(() => {
-                heart.remove();
-            }, 6000);
-        }
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💗";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
 
         setInterval(createHeart, 300);
     </script>
