@@ -12,7 +12,7 @@
             align-items: center;
             font-family: 'Segoe UI', sans-serif;
             background: linear-gradient(135deg, #ffd6e8, #ffeef5);
-            overflow: hidden;
+            overflow-x: hidden;
             text-align: center;
         }
 
@@ -152,7 +152,7 @@ function loveYes() {
 
         <br><br>
 
-        <h2 id="typing" style="max-width:600px; line-height:1.6;"></h2>
+       <p id="typing" style="max-width:700px; line-height:1.8; font-size:18px;"></p>
 
         <br><br>
 
@@ -165,22 +165,25 @@ function loveYes() {
 }
 function typeLetter() {
 
-    const text = `Happy Valentine’s Day, my love ♥️ This is our fourth Valentine’s together, and somehow each year with you feels sweeter than the last. I still get butterflies when I think about you. You are my safe place, my biggest supporter, my favorite notification, and the reason I catch myself smiling at my phone for no reason. Even when you tease me or purposely try to make me mad, I still choose you, every single time. It’s not really in my nature to be this soft or this patient, but when it comes to you, everything about me changes in the most beautiful way. Loving you feels easy, natural, and a little magical all at once. I don’t just want to celebrate today with you, I want to celebrate every Valentine’s for the rest of my life by your side. Thank you for being my best friend, my partner, and the only person I would willingly share myself with completely and forever. I love you more than words can explain, more than chocolate, and even more than you love teasing me. 💕 I Love You Paa ♥️♾️`;
+    const text = `Happy Valentine’s Day, my love ♥️ This is our fourth Valentine’s together, and somehow each year with you feels sweeter than the last. I still get butterflies when I think about you. You are my safe place, my biggest supporter, my favorite notification, and the reason I catch myself smiling at my phone for no reason. Even when you tease me or purposely try to make me mad, I still choose you, every single time. It’s not really in my nature to be this soft or this patient, but when it comes to you, everything about me changes in the most beautiful way. Loving you feels easy, natural, and a little magical all at once. I don’t just want to celebrate today with you, I want to celebrate every Valentine’s for the rest of my life by your side. Thank you for being my best friend, my partner, and the only person I would willingly share myself with completely and forever. I love you more than words can explain, more than chocolate, and even more than you love teasing me. 💕 I Love You Paa♥️♾️`;
 
     let i = 0;
-    const speed = 35; // medium sweet speed
+    const speed = 45; // romantic medium speed
 
     function type() {
         if (i < text.length) {
             document.getElementById("typing").innerHTML += text.charAt(i);
             i++;
+
+            // Auto scroll while typing
+            window.scrollTo(0, document.body.scrollHeight);
+
             setTimeout(type, speed);
         }
     }
 
     type();
 }
-
 
 function createHeart() {
     const heart = document.createElement("div");
