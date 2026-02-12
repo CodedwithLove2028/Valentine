@@ -316,6 +316,137 @@ function typeMemory() {
 
     typing();
 }
+function finalProposal() {
+
+    document.body.innerHTML = `
+    <div style="
+        background:linear-gradient(to bottom right, #ffd6eb, #ffb3d9);
+        min-height:100vh;
+        font-family:'Segoe UI', sans-serif;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        padding:40px;
+        animation:fadeIn 1.5s ease;
+    ">
+
+        <h1 style="
+            color:white;
+            font-size:36px;
+            margin-bottom:25px;
+        ">
+            After everything… 💗
+        </h1>
+
+        <p style="
+            max-width:700px;
+            color:white;
+            font-size:18px;
+            line-height:1.8;
+            margin-bottom:40px;
+        ">
+            Every memory, every laugh, every quiet moment with you
+            has become my favorite part of life.
+            You are my comfort, my happiness,
+            my forever person.
+        </p>
+
+        <img src="special.jpg" style="
+            width:320px;
+            border-radius:25px;
+            margin-bottom:40px;
+            box-shadow:0 25px 45px rgba(0,0,0,0.3);
+            animation:floatPhoto 4s ease-in-out infinite;
+        ">
+
+        <h2 style="
+            color:white;
+            font-size:30px;
+            margin-bottom:40px;
+        ">
+            Will you continue choosing me forever? 💍
+        </h2>
+
+        <div>
+            <button onclick="celebrateLove()" style="
+                padding:15px 35px;
+                border:none;
+                border-radius:30px;
+                background:white;
+                color:#ff4d88;
+                font-size:18px;
+                margin-right:20px;
+                cursor:pointer;
+            ">
+                Yes 💞
+            </button>
+
+            <button onclick="celebrateLove()" style="
+                padding:15px 35px;
+                border:none;
+                border-radius:30px;
+                background:#ff4d88;
+                color:white;
+                font-size:18px;
+                cursor:pointer;
+            ">
+                Always Yes 💖
+            </button>
+        </div>
+
+    </div>
+
+    <style>
+        @keyframes fadeIn {
+            from { opacity:0; }
+            to { opacity:1; }
+        }
+
+        @keyframes floatPhoto {
+            0% { transform:translateY(0px); }
+            50% { transform:translateY(-12px); }
+            100% { transform:translateY(0px); }
+        }
+    </style>
+    `;
+}
+
+function celebrateLove() {
+
+    document.body.innerHTML = `
+    <div style="
+        background:#ff4d88;
+        min-height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        font-family:'Segoe UI', sans-serif;
+        color:white;
+        animation:fadeIn 1.5s ease;
+        flex-direction:column;
+    ">
+
+        <h1 style="font-size:50px; margin-bottom:20px;">
+            She Said YES!!! 💍💖
+        </h1>
+
+        <p style="font-size:22px;">
+            Forever starts now. ♾️
+        </p>
+
+    </div>
+
+    <style>
+        @keyframes fadeIn {
+            from { opacity:0; }
+            to { opacity:1; }
+        }
+    </style>
+    `;
+}
 
 function typeLetter() {
 
