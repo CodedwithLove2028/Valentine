@@ -135,36 +135,77 @@ function moveNo() {
     btn.style.left = Math.random() * 80 + "%";
 }
 function loveYes() {
+
+    clearInterval(heartInterval); // stop hearts if running
+
     document.body.innerHTML = `
     <div style="
         background:#ffe6f0;
-        min-height:100vh;
-        overflow-y:auto;
+        height:100vh;
         display:flex;
         justify-content:center;
         align-items:center;
-        flex-direction:column;
         font-family:'Segoe UI', sans-serif;
-        text-align:center;
-        padding:20px;
+        padding:40px;
+        box-sizing:border-box;
     ">
-        <h1 style="color:#ff4d88;">Hehe I knew it 😍❤️</h1>
-        <p>You are stuck with me forever 🥺</p>
 
-        <br><br>
+        <div style="
+            background:white;
+            width:90%;
+            max-width:1100px;
+            height:85vh;
+            border-radius:20px;
+            box-shadow:0 15px 40px rgba(0,0,0,0.15);
+            display:flex;
+            padding:40px;
+            gap:40px;
+            box-sizing:border-box;
+        ">
 
-       <p id="typing" style="max-width:700px; line-height:1.8; font-size:18px;"></p>
+            <div style="
+                flex:1;
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+            ">
+                <h1 style="color:#ff4d88; margin-bottom:10px;">
+                    Hehe I knew it 😍❤️
+                </h1>
 
-        <br><br>
+                <p style="margin-bottom:20px;">
+                    You are stuck with me forever 🥺
+                </p>
 
-        <img src="WhatsApp Image 2026-02-11 at 23.31.20.jpeg"
-     style="width:230px; border-radius:20px; box-shadow:0 10px 25px rgba(0,0,0,0.2);">
+                <p id="typing" style="
+                    font-size:16px;
+                    line-height:1.6;
+                "></p>
+            </div>
+
+            <div style="
+                flex:1;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+            ">
+                <img src="us.jpg"
+                     style="
+                        width:100%;
+                        max-width:350px;
+                        border-radius:20px;
+                        box-shadow:0 10px 30px rgba(0,0,0,0.2);
+                     ">
+            </div>
+
+        </div>
 
     </div>
     `;
 
     typeLetter();
 }
+
 function typeLetter() {
 
     const text = `Happy Valentine’s Day, My Love ♥️ This is our fourth Valentine’s together, and somehow each year with you feels sweeter than the last. I still get butterflies when I think about you. You are my safe place, my biggest supporter, my favorite notification, and the reason I catch myself smiling at my phone for no reason. Even when you tease me or purposely try to make me mad, I still choose you, every single time. It’s not really in my nature to be this soft or this patient, but when it comes to you, everything about me changes in the most beautiful way. Loving you feels easy, natural, and a little magical all at once. I don’t just want to celebrate today with you, I want to celebrate every Valentine’s for the rest of my life by your side. Thank you for being my best friend, my partner, and the only person I would willingly share myself with completely and forever. I love you more than words can explain, more than chocolate, and even more than you love teasing me. 💕 I Love You Paa♥️♾️`;
