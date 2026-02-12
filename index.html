@@ -417,7 +417,7 @@ function celebrateLove() {
 
     document.body.innerHTML = `
     <div style="
-        background:#ff4d88;
+        background:linear-gradient(to bottom, #ff4d88, #ff1a66);
         min-height:100vh;
         display:flex;
         justify-content:center;
@@ -425,29 +425,75 @@ function celebrateLove() {
         text-align:center;
         font-family:'Segoe UI', sans-serif;
         color:white;
-        animation:fadeIn 1.5s ease;
         flex-direction:column;
+        overflow:hidden;
+        position:relative;
     ">
 
-        <h1 style="font-size:50px; margin-bottom:20px;">
-            She Said YES!!! 💍💖
+        <h1 style="
+            font-size:55px;
+            margin-bottom:20px;
+            animation:fadeIn 2s ease;
+        ">
+            I LOVE YOU ❤️
         </h1>
 
-        <p style="font-size:22px;">
-            Forever starts now. ♾️
-        </p>
+        <h2 style="
+            font-size:28px;
+            margin-bottom:30px;
+            animation:fadeIn 3s ease;
+        ">
+            Forever starts now ♾️
+        </h2>
+
+        <div style="
+            font-size:50px;
+            animation:floatRing 3s ease-in-out infinite;
+        ">
+            💍 ✨ 💖
+        </div>
+
+        <div class="fireworks"></div>
 
     </div>
 
     <style>
         @keyframes fadeIn {
-            from { opacity:0; }
-            to { opacity:1; }
+            from { opacity:0; transform:translateY(20px); }
+            to { opacity:1; transform:translateY(0); }
+        }
+
+        @keyframes floatRing {
+            0% { transform:translateY(0px); }
+            50% { transform:translateY(-15px); }
+            100% { transform:translateY(0px); }
+        }
+
+        .fireworks::before,
+        .fireworks::after {
+            content:"🎆 🎇 ✨ 💖 💕 🎆 🎇";
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            font-size:40px;
+            animation:fireworkMove 6s linear infinite;
+        }
+
+        .fireworks::after {
+            top:50%;
+            animation-delay:3s;
+        }
+
+        @keyframes fireworkMove {
+            0% { transform:translateY(100vh); opacity:0; }
+            20% { opacity:1; }
+            80% { opacity:1; }
+            100% { transform:translateY(-20vh); opacity:0; }
         }
     </style>
     `;
 }
-
 function typeLetter() {
 
     const text = `Happy Valentine’s Day, My Love ♥️ This is our fourth Valentine’s together, and somehow each year with you feels sweeter than the last. I still get butterflies when I think about you. You are my safe place, my biggest supporter, my favorite notification, and the reason I catch myself smiling at my phone for no reason. Even when you tease me or purposely try to make me mad, I still choose you, every single time. It’s not really in my nature to be this soft or this patient, but when it comes to you, everything about me changes in the most beautiful way. Loving you feels easy, natural, and a little magical all at once. I don’t just want to celebrate today with you, I want to celebrate every Valentine’s for the rest of my life by your side. Thank you for being my best friend, my partner, and the only person I would willingly share myself with completely and forever. I love you more than words can explain, more than chocolate, and even more than you love teasing me. 💕 I Love You Paa♥️♾️`;
