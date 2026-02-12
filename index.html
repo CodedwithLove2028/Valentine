@@ -221,42 +221,54 @@ function loveYes() {
     typeLetter();
 }
 
-    function goToMemories() {
+   function goToMemories() {
 
     document.body.innerHTML = `
     <div style="
-        position:relative;
-        background:linear-gradient(to bottom, #ffe6f2, #ffd6eb);
+        background:#ffe6f2;
         min-height:100vh;
         font-family:'Segoe UI', sans-serif;
-        padding:80px 40px;
-        overflow:hidden;
+        padding:70px 20px;
         text-align:center;
+        position:relative;
+        overflow:hidden;
     ">
 
         <h2 style="
             color:#ff4d88;
             font-size:26px;
-            margin-bottom:70px;
-            font-weight:600;
+            margin-bottom:60px;
         ">
             Our Beautiful Memories 💕
         </h2>
 
-        <div id="photoContainer" style="
+        <div id="collage" style="
             position:relative;
             width:100%;
-            max-width:1200px;
-            margin:0 auto;
-            min-height:600px;
+            max-width:900px;
+            margin:0 auto 80px auto;
+            height:600px;
         ">
+
+            <img src="photo_2026-02-12_20-28-59.jpg" class="photo p1">
+            <img src="photo_2026-02-12_20-27-57.jpg" class="photo p2">
+            <img src="photo_2026-02-12_20-28-17.jpg" class="photo p3">
+            <img src="WhatsApp Image 2026-02-12 at 20.32.46.jpeg" class="photo p4">
+            <img src="photo_2026-02-12_20-28-29.jpg" class="photo p5">
+            <img src="WhatsApp Image 2026-02-12 at 20.34.44.jpeg" class="photo p6">
+            <img src="WhatsApp Image 2026-02-12 at 20.32.45.jpeg" class="photo p7">
+            <img src="WhatsApp Image 2026-02-12 at 20.30.18.jpeg" class="photo p8">
+            <img src="photo_2026-02-12_20-29-06.jpg" class="photo p9">
+            <img src="photo_2026-02-12_20-27-00.jpg" class="photo p10">
+
         </div>
 
         <p id="memoryText" style="
             max-width:700px;
-            margin:100px auto 40px auto;
+            margin:auto;
             line-height:1.7;
             font-size:15px;
+            margin-bottom:40px;
         "></p>
 
         <button onclick="finalProposal()" style="
@@ -272,53 +284,47 @@ function loveYes() {
         </button>
 
     </div>
+
+    <style>
+        .photo {
+            position:absolute;
+            width:200px;
+            border-radius:20px;
+            box-shadow:0 15px 30px rgba(0,0,0,0.2);
+            opacity:0;
+            transform:scale(0.9);
+            transition:all 1.2s ease;
+        }
+
+        .p1 { top:0; left:10%; }
+        .p2 { top:50px; right:10%; }
+        .p3 { top:180px; left:5%; }
+        .p4 { top:200px; right:5%; }
+        .p5 { top:100px; left:35%; }
+        .p6 { top:350px; left:20%; }
+        .p7 { top:350px; right:20%; }
+        .p8 { top:420px; left:45%; }
+        .p9 { top:250px; left:55%; }
+        .p10 { top:120px; right:35%; }
+    </style>
     `;
 
     typeMemory();
-    createFloatingPhotos();
+    animateCollage();
 }
-function createFloatingPhotos() {
 
-    const images = [
-        "photo_2026-02-12_20-28-59.jpg",
-        "photo_2026-02-12_20-27-57.jpg",
-        "photo_2026-02-12_20-28-17.jpg",
-        "WhatsApp Image 2026-02-12 at 20.32.46.jpeg",
-        "photo_2026-02-12_20-28-29.jpg",
-        "WhatsApp Image 2026-02-12 at 20.34.44.jpeg",
-        "WhatsApp Image 2026-02-12 at 20.32.45.jpeg",
-        "WhatsApp Image 2026-02-12 at 20.30.18.jpeg",
-        "photo_2026-02-12_20-29-06.jpg",
-        "photo_2026-02-12_20-27-00.jpg"
-    ];
+function animateCollage() {
 
-    const container = document.getElementById("photoContainer");
+    const photos = document.querySelectorAll(".photo");
 
-    images.forEach((src, index) => {
-
-        const img = document.createElement("img");
-        img.src = src;
-
-        img.style.position = "absolute";
-        img.style.width = "200px";
-        img.style.borderRadius = "20px";
-        img.style.boxShadow = "0 15px 35px rgba(0,0,0,0.2)";
-        img.style.opacity = "0";
-        img.style.transform = "translateY(40px)";
-        img.style.transition = "all 1.5s ease";
-
-        // Random soft positions
-        img.style.top = Math.random() * 500 + "px";
-        img.style.left = Math.random() * 80 + "%";
-
-        container.appendChild(img);
-
+    photos.forEach((photo, index) => {
         setTimeout(() => {
-            img.style.opacity = "1";
-            img.style.transform = "translateY(0)";
-        }, index * 400);
+            photo.style.opacity = "1";
+            photo.style.transform = "scale(1)";
+        }, index * 300);
     });
 }
+
 
 function typeMemory() {
 
