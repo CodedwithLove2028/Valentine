@@ -225,51 +225,47 @@ function loveYes() {
 
     document.body.innerHTML = `
     <div style="
-        background:#ffe6f2;
+        background:linear-gradient(to right, #ffe6f2, #ffd6eb);
         min-height:100vh;
         font-family:'Segoe UI', sans-serif;
-        padding:70px 20px;
+        padding:60px 80px;
         text-align:center;
-        position:relative;
-        overflow:hidden;
     ">
 
         <h2 style="
             color:#ff4d88;
             font-size:26px;
-            margin-bottom:60px;
+            margin-bottom:50px;
         ">
             Our Beautiful Memories 💕
         </h2>
 
-        <div id="collage" style="
-         position:relative;
-         width:100%;
-         max-width:1000px;
-         margin:0 auto 120px auto;
-         height:750px;
-    ">
+        <div style="
+            display:grid;
+            grid-template-columns:repeat(5, 1fr);
+            gap:30px;
+            max-width:1400px;
+            margin:0 auto 70px auto;
+        ">
 
-
-            <img src="photo_2026-02-12_20-28-59.jpg" class="photo p1">
-            <img src="photo_2026-02-12_20-27-57.jpg" class="photo p2">
-            <img src="photo_2026-02-12_20-28-17.jpg" class="photo p3">
-            <img src="WhatsApp Image 2026-02-12 at 20.32.46.jpeg" class="photo p4">
-            <img src="photo_2026-02-12_20-28-29.jpg" class="photo p5">
-            <img src="WhatsApp Image 2026-02-12 at 20.34.44.jpeg" class="photo p6">
-            <img src="WhatsApp Image 2026-02-12 at 20.32.45.jpeg" class="photo p7">
-            <img src="WhatsApp Image 2026-02-12 at 20.30.18.jpeg" class="photo p8">
-            <img src="photo_2026-02-12_20-29-06.jpg" class="photo p9">
-            <img src="photo_2026-02-12_20-27-00.jpg" class="photo p10">
+            <img src="pic1.jpg" class="memPhoto">
+            <img src="pic2.jpg" class="memPhoto">
+            <img src="pic3.jpg" class="memPhoto">
+            <img src="pic4.jpg" class="memPhoto">
+            <img src="pic5.jpg" class="memPhoto">
+            <img src="pic6.jpg" class="memPhoto">
+            <img src="pic7.jpg" class="memPhoto">
+            <img src="pic8.jpg" class="memPhoto">
+            <img src="pic9.jpg" class="memPhoto">
+            <img src="pic10.jpg" class="memPhoto">
 
         </div>
 
         <p id="memoryText" style="
-            max-width:700px;
-            margin:auto;
+            max-width:800px;
+            margin:0 auto 40px auto;
             line-height:1.7;
             font-size:15px;
-            margin-bottom:40px;
         "></p>
 
         <button onclick="finalProposal()" style="
@@ -287,55 +283,21 @@ function loveYes() {
     </div>
 
     <style>
-    .photo {
-        position:absolute;
-        width:190px;
-        border-radius:20px;
-        box-shadow:0 15px 30px rgba(0,0,0,0.2);
-        opacity:0;
-        transform:scale(0.9);
-        transition:all 1.2s ease;
-    }
+        .memPhoto {
+            width:100%;
+            border-radius:20px;
+            box-shadow:0 12px 25px rgba(0,0,0,0.15);
+            transition:transform 0.4s ease;
+        }
 
-    /* Center main photo (bigger) */
-    .p5 {
-        width:240px;
-        top:220px;
-        left:50%;
-        transform:translateX(-50%) scale(0.9);
-        z-index:5;
-    }
-
-    .p1 { top:20px; left:15%; }
-    .p2 { top:40px; right:15%; }
-    .p3 { top:200px; left:5%; }
-    .p4 { top:220px; right:5%; }
-    .p6 { top:450px; left:15%; }
-    .p7 { top:470px; right:15%; }
-    .p8 { top:600px; left:40%; }
-    .p9 { top:420px; left:55%; }
-    .p10 { top:120px; right:35%; }
-</style>
-
+        .memPhoto:hover {
+            transform:scale(1.05);
+        }
+    </style>
     `;
 
     typeMemory();
-    animateCollage();
 }
-
-function animateCollage() {
-
-    const photos = document.querySelectorAll(".photo");
-
-    photos.forEach((photo, index) => {
-        setTimeout(() => {
-            photo.style.opacity = "1";
-            photo.style.transform = "scale(1)";
-        }, index * 300);
-    });
-}
-
-
 function typeMemory() {
 
     const text = "My favorite memory isn’t just one single day… it’s every little moment with you. The random laughs. The silent comfort. The way you look at me like I’m your whole world. 💗 No matter what happens in life… I choose you. Every single time.";
